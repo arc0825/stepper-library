@@ -1,0 +1,16 @@
+{
+  "name": "stepper-library",
+  "version": "1.0.9",
+  "description": "A simple stepper form component for angular projects to display content in the form of steps that also checks for validity of the current step form and only then aloows to move to next next. This is usefull for forms with many fields for example, sign-up forms. On mobile it displays a circular progress bar and a horizontal progress bar on desktop screens.",
+  "author": "Archana Patil",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "angular-stepper-component",
+    "angular-stepper-form"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0"
+  }
+}

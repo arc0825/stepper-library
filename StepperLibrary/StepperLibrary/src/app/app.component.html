@@ -1,0 +1,42 @@
+<app-stepset [finishBtn]="buttonClass" [btnPos]="'btn-right'" (submitEvent)="submit()">
+  <app-step title="Personal Info">
+    <form #form1="ngForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input placeholder="Name" name="form11" [(ngModel)]="dummyform.fname" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input placeholder="Email" name="email" [(ngModel)]="dummyform.fname" required>
+
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input placeholder="Password" name="password" [(ngModel)]="dummyform.fname" required>
+
+
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input placeholder="Password" name="password" [(ngModel)]="dummyform.fname" required>
+
+
+      </div>
+    </form>
+  </app-step>
+  <app-step title="Company Info">
+    <form #form2="ngForm">
+      <input placeholder="Company Name" name="form12" [(ngModel)]="dummyform.lname" required>
+      <input placeholder="Location" name="form12" [(ngModel)]="dummyform.lname" required>
+      <input placeholder="Job Title" name="form12" [(ngModel)]="dummyform.lname" required>
+    </form>
+  </app-step>
+  <app-step title="Social Account">
+    <form #form2="ngForm">
+      <input placeholder="LinkedIn" name="form13" [(ngModel)]="dummyform.mname" required>
+      <input placeholder="Twitter" name="form13" [(ngModel)]="dummyform.mname" required>
+      <input placeholder="Github" name="form13" [(ngModel)]="dummyform.mname" required>
+    </form>
+  </app-step>
+</app-stepset>
+

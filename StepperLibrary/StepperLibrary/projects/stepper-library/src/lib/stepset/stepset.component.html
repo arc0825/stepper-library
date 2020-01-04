@@ -1,0 +1,40 @@
+<div id="stepset-container">
+  <div id="lg-progress">
+    <div id="step-nav">
+      <div *ngFor="let s of steps;let i=index" (click)="jumpToStep(i)" [ngClass]="i < stepNo ? 'validStep' : ''">
+        {{i+1}}<p>{{s.title}}</p>
+      </div>
+      <svg id="line-progress" height=7>
+        <g id="progress-container">
+          <line x1="0" y1="50%" x2="100%" y2="50%" stroke-width=7 />
+        </g>
+        <g id="progress-content">
+          <line x1="0" y1="50%" x2="100%" y2="50%" stroke-width=7 fill="transparent" stroke-dasharray="0%"
+            stroke-dashoffset="0%" #progressbar [ngStyle]="{'transform':'translateX('+ progressValue +'%)'}" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div id="xs-progress">
+    <span class="step-display">{{this.stepNo+1}} of {{this.totalSteps}}</span>
+    <svg id="svg" width="100" height="100">
+      <circle [attr.r]='radius' cx="50" cy="50" fill="transparent" [attr.stroke-dasharray]="strokeDashOffset"
+        stroke-dashoffset="0"></circle>
+      <circle #bar id="bar" [attr.r]='radius' cx="50" cy="50" fill="transparent"
+        [attr.stroke-dasharray]="strokeDashOffset" [attr.stroke-dashoffset]='strokeDashOffset'></circle>
+    </svg>
+    <h3 class="title">
+      {{steps[stepNo]?.title}}
+    </h3>
+  </div>
+  <div id="content-container">
+    <ng-content></ng-content>
+    <hr>
+    <div id="buttons" [ngClass]="btnPos">
+      <button class="prev-btn" (click)="prevStep()">Back</button>
+      <button class="next-btn" (click)="nextStep()" *ngIf="totalSteps > stepNo+1">Next</button>
+      <button (click)="submit()" [ngStyle]="styles" *ngIf="totalSteps == stepNo+1">Finish</button>
+    </div>
+  </div>
+</div>

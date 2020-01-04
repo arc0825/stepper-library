@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+}
+
+.slide {
+  transform: translateX(100%);
+  animation: animateStep 0.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animateStep {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  @media (max-width: 426px) {
+    display: none;
+  }
+}

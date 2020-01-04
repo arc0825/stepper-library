@@ -1,0 +1,14 @@
+
+<h4 id="refresh-msg" *ngIf="newsList.length > 0">Auto refresh in {{time}} seconds</h4>
+<div id="container">
+<article class="row flex" *ngFor="let n of newsList">
+  <img class="article-img" [src]="n.urlToImage"  alt="" onerror="this.alt='no image'">
+  <div class="content" translate="yes">
+    <p class="title truncate-text">{{n?.title}}</p>
+  <p class="desc truncate-text">{{n?.description}} </p>
+  <button class="read-more">Read More</button>
+  </div>
+</article>
+</div>
+
+<p *ngIf="newsList.length == 0 && query" id="no-content">No articles available related to {{query}}</p>

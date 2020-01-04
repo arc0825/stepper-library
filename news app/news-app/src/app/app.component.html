@@ -1,0 +1,10 @@
+<header>
+<h1>
+  Latest News Search
+</h1>
+<form #searchForm="ngForm" (ngSubmit)="routeTo()" id="form">
+   <input type="text" (input)="debounceSearch(search.value)" [(ngModel)]="newsQuery" placeholder="Search here..." ngModel #search name="search">
+  <button type="submit" [disabled]="!newsQuery"><i class="fa fa-search"></i></button>
+</form>
+</header>
+<router-outlet></router-outlet>
